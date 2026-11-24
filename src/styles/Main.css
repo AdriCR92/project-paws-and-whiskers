@@ -1,0 +1,112 @@
+.home-hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fbf1e3;
+    color: #4a123b;
+    text-align: left;
+}
+
+.home-hero__content {
+    padding: clamp(20px, 5vw, 48px);
+}
+
+.home-hero__tittle {
+    margin: 0 0 16px;
+    font: 700 clamp(2rem,5vw,3.75rem) / 1.05 Georgia, serif;
+    color: inherit;
+}
+
+.home-hero__link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #4a123b;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-hero__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+ .home-shortcuts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-block: 24px, 32px;
+    text-align: left;
+    padding: 24px;
+ }
+
+ .home-shortcuts__card {
+    display: block;
+    padding: 24px;
+    border: 1px solid #E8D5C8;
+    border-radius: 16px;
+    background: #fbf1e3;
+    color: #4a123b;
+    text-decoration: none;
+ }
+
+ .home-shortcuts__card--match {
+    background: #fbf1e3;
+ }
+
+ .home-shortcuts__title {
+  color: inherit;
+  font-weight: 800;
+}
+
+a.home-shortcuts__card:hover .home-shortcuts__title,
+a.home-shortcuts__card:focus-visible .home-shortcuts__title {
+  text-decoration: underline;
+}
+
+.home-shortcuts__card small {
+  display: block;
+  margin-top: 8px;
+}
+
+.home-shortcuts__icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    object-fit: contain;
+
+}
+
+
+@media (min-width:641px) {
+    .home-hero {
+        grid-template-columns: repeat(10,minmax(0, 1fr));
+    }
+
+    .home-hero__content {
+        grid-area: 1 /1 /2 / 6;
+        position: relative;
+        z-index: 1;
+    }
+    .home-hero__image {
+        grid-area: 1 /4 / 2 / -1;
+        aspect-ratio: 16 / 9;
+        mask-image: linear-gradient(to right, transparent 5%, #000 45%);
+    }
+}
+
+@media (max-width: 640px) {
+    .home-hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    
+    .home-shortcuts {
+        grid-template-columns: 1fr;
+    }
+}
