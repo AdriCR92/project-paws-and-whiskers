@@ -1,4 +1,4 @@
-.home-hero {
+.home-page {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
@@ -9,17 +9,17 @@
     text-align: left;
 }
 
-.home-hero__content {
+.home-page__content {
     padding: clamp(20px, 5vw, 48px);
 }
 
-.home-hero__tittle {
+.home-page__tittle {
     margin: 0 0 16px;
     font: 700 clamp(2rem,5vw,3.75rem) / 1.05 Georgia, serif;
     color: inherit;
 }
 
-.home-hero__link {
+.home-page__link {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 18px;
@@ -30,7 +30,7 @@
     text-decoration: none;
 }
 
-.home-hero__image {
+.home-page__image {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -85,16 +85,16 @@ a.home-shortcuts__card:focus-visible .home-shortcuts__title {
 
 
 @media (min-width:641px) {
-    .home-hero {
+    .home-page {
         grid-template-columns: repeat(10,minmax(0, 1fr));
     }
 
-    .home-hero__content {
+    .home-page__content {
         grid-area: 1 /1 /2 / 6;
         position: relative;
         z-index: 1;
     }
-    .home-hero__image {
+    .home-page__image {
         grid-area: 1 /4 / 2 / -1;
         aspect-ratio: 16 / 9;
         mask-image: linear-gradient(to right, transparent 5%, #000 45%);
@@ -102,7 +102,7 @@ a.home-shortcuts__card:focus-visible .home-shortcuts__title {
 }
 
 @media (max-width: 640px) {
-    .home-hero {
+    .home-page {
         grid-template-columns: minmax(0, 1fr);
     }
     

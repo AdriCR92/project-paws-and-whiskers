@@ -1,5 +1,6 @@
 import "../../styles/Header.css"
-import pawLogo from "../../assets/images/paws-logo Small.png"
+import { NavLink } from "react-router-dom"
+import pawLogo from "../../images/paws-logo.png"
 
 function Header() {
     return (
@@ -10,10 +11,10 @@ function Header() {
                     Paws & Whiskers
                 </span>
                 <ul className="header__menu">
-                    <li>Home</li>
+                    <li><NavLink to="/" end>Home</NavLink></li>
                     <li>Explore Cats</li>
                     <li className="header__menu-item--highlighted">Pawfect Match</li>
-                    <li>About</li>
+                    <li><NavLink to="/about">About</NavLink></li>
                 </ul>
             </div>
         </header>

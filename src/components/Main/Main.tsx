@@ -1,23 +1,24 @@
 import "../../styles/Main.css"
-import heroImage from "../../assets/images/home-hero Small.png"
-import pawIcon from "../../assets/images/paw-icon Small.png"
-import quizIcon from "../../assets/images/quiz-icon Small.png"
+import { Link } from "react-router-dom"
+import homeImage from "../../images/home-img.png"
+import pawIcon from "../../images/paw-icon.png"
+import quizIcon from "../../images/quiz-icon.png"
 
 function Main () {
     return (
         <>
-        <section className="home-hero">
-            <div className="home-hero__content">
-                <h1 className="home-hero__tittle">Find your kind of cat</h1>
+        <section className="home-page">
+            <div className="home-page__content">
+                <h1 className="home-page__tittle">Find your kind of cat</h1>
                 <p>Explore cat breeds and find one that fits your preferences.</p>
-                <a className="home-hero__link" href="#explore-cats">
+                <a className="home-page__link" href="#explore-cats">
                     Explore cats
                 </a>
             </div>
 
             <img
-            className="home-hero__image"
-            src={heroImage}
+            className="home-page__image"
+            src={homeImage}
             alt="A fluffy cat resting on a blanket"
             />
         </section>
@@ -32,7 +33,7 @@ function Main () {
                 <p>Take a short quiz to find breeds that fit your preferences.</p>
             </a>
 
-            <a className="home-shortcuts__card" href="#about-author">
+            <Link className="home-shortcuts__card" to="/about">
                 <img
                 className="home-shortcuts__icon"
                 src={pawIcon}
@@ -40,7 +41,7 @@ function Main () {
                 />
                 <h2 className="home-shortcuts__title">About Paws & Whiskers</h2>
                 <p>Meet the creator and the cat who inspired the app.</p>
-            </a>
+            </Link>
         </div>
         
         </>
