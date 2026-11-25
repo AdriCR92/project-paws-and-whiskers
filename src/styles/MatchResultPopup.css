@@ -1,0 +1,104 @@
+.popup.match-result-popup {
+  width: min(calc(100% - 32px), 780px);
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: clamp(16px, 4vw, 28px);
+  background-color: #fdf0f2;
+  box-shadow: 0 20px 60px rgb(74 18 59 / 30%);
+  text-align: left;
+}
+
+.match-result-popup::backdrop {
+  background: rgb(74 18 59 / 58%);
+}
+
+.match-result-popup .popup__controls {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  margin: 0;
+}
+
+.match-result-popup .popup__controls button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background-color: #fdf0f2;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.match-result-popup__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 4vw, 32px);
+}
+
+.match-result-popup__media {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f8dedf;
+}
+
+.match-result-popup__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.match-result-popup__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.match-result-popup__content h2 {
+  padding-inline-end: 32px;
+  color: inherit;
+  font-weight: 800;
+}
+
+.match-result-popup__breed {
+  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.match-result-popup__link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #4a123b;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.match-result-popup__link:hover,
+.match-result-popup__link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .match-result-popup__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .match-result-popup__photo {
+    max-height: 220px;
+  }
+
+  .match-result-popup__content h2 {
+    padding-inline-end: 0;
+  }
+}

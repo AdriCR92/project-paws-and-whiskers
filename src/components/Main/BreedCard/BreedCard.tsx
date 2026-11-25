@@ -1,20 +1,28 @@
 import catIcon from '../../../images/cat-icon.png'
 import ImagePopup from '../Popup/ImagePopup/ImagePopup';
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom'
 
 type BreedCardProps = {
   name: string;
   description: string;
+  detailsTo?: string;
   image?: {
     src: string;
     alt: string;
   };
 };
 
-function BreedCard({ name, description, image }: BreedCardProps) {
+function BreedCard({ name, description, image, detailsTo }: BreedCardProps) {
   const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null)
   const photoDialog = useRef<HTMLDialogElement>(null)
   const photo = image?.src && image.src !== failedImageSrc ? image : undefined
+  const details = (
+    <>
+      <h2 className="breed-card__name">{name}</h2>
+      <p>{description}</p>
+    </>
+  )
 
   return (
     <article className="breed-card">
@@ -38,10 +46,13 @@ function BreedCard({ name, description, image }: BreedCardProps) {
           <img className="breed-card__icon" src={catIcon} alt="" />
         )}
       </div>
-      <div className="breed-card__content">
-        <h2 className="breed-card__name">{name}</h2>
-        <p>{description}</p>
-      </div>
+      {detailsTo ? (
+        <Link className="breed-card__content breed-card__details-link" to={detailsTo}>
+          {details}
+        </Link>
+      ) : (
+        <div className="breed-card__content">{details}</div>
+      )}
       {photo && (
         <ImagePopup
           dialogRef={photoDialog}

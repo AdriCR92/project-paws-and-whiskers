@@ -4,13 +4,15 @@ type PopupProps = {
   dialogRef: Ref<HTMLDialogElement>
   label: string
   children: ReactNode
+  className?: string
+  closeText?: string
 }
 
-export default function Popup({ dialogRef, label, children }: PopupProps) {
+export default function Popup({ dialogRef, label, children, className, closeText = 'Close' }: PopupProps) {
   return (
     <dialog 
     ref={dialogRef} 
-    className="popup" 
+    className={className ? `popup ${className}` : 'popup'}
     aria-label={label}
     onClick={(event) => {
         const dialog = event.currentTarget
@@ -28,7 +30,7 @@ export default function Popup({ dialogRef, label, children }: PopupProps) {
         }}
     >
       <form method="dialog" className="popup__controls">
-        <button type="submit">Close</button>
+        <button type="submit" aria-label="Close">{closeText}</button>
       </form>
       {children}
     </dialog>

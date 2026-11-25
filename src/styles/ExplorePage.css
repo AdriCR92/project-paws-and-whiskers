@@ -11,3 +11,28 @@
   color: inherit;
   font-weight: 800;
 }
+
+.explore-page__all-breeds {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 16px;
+  padding-inline: 18px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background-color: #fffbf5;
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.explore-page__all-breeds:hover {
+  background-color: #4a123b;
+  color: #fff;
+}
+
+.explore-page__all-breeds:focus-visible {
+  outline: 2px solid #4a123b;
+  outline-offset: 3px;
+}
