@@ -1,18 +1,8 @@
+import type { BreedCardProps } from '../../../types/types'
 import catIcon from '../../../images/cat-icon.png'
 import ImagePopup from '../Popup/ImagePopup/ImagePopup';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom'
-
-type BreedCardProps = {
-  name: string;
-  description: string;
-  detailsTo?: string;
-  compactWithoutPhoto?: boolean;
-  image?: {
-    src: string;
-    alt: string;
-  };
-};
 
 function BreedCard({ name, description, image, detailsTo, compactWithoutPhoto }: BreedCardProps) {
   const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null)

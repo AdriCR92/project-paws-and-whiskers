@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import BreedCard from '../../BreedCard/BreedCard'
 import { breeds } from '../../../../data/breeds'
-import { getBreeds, type ApiBreed } from '../../../../utils/catFactsApi'
+import type { ApiBreed } from '../../../../types/types'
+import { getBreeds } from '../../../../utils/catFactsApi'
 import '../../../../styles/ExplorePage.css'
 
 function describeApiBreed(breed: ApiBreed, includeOrigin = false) {

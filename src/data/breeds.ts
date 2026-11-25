@@ -1,15 +1,7 @@
 import maineCoonPhoto from '../images/maine-coon.jpeg'
 import siamesePhoto from '../images/siamese.jpeg'
 import britishPhoto from '../images/british-shorthair.jpeg'
-
-export type Breed = {
-  id: string
-  name: string
-  description: string
-  image?: { src: string; alt: string }
-  quizProfile: readonly [number, number, number, number]
-  matchSummary: string
-}
+import type { Breed } from '../types/types'
 
 export const breeds: readonly Breed[] = [
   {

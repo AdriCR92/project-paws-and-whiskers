@@ -1,12 +1,5 @@
-import type { Ref } from 'react'
+import type { ImagePopupProps } from '../../../../types/types'
 import Popup from '../Popup'
-
-type ImagePopupProps = {
-  dialogRef: Ref<HTMLDialogElement>
-  name: string
-  src: string
-  alt: string
-}
 
 export default function ImagePopup({
   dialogRef,

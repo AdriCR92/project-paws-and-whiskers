@@ -1,14 +1,8 @@
-import type { Ref } from 'react'
+import type { MatchResultPopupProps } from '../../../../types/types'
 import { Link } from 'react-router-dom'
-import type { Breed } from '../../../../data/breeds'
 import catIcon from '../../../../images/cat-icon.png'
 import Popup from '../Popup'
 import '../../../../styles/MatchResultPopup.css'
-
-type MatchResultPopupProps = {
-  dialogRef: Ref<HTMLDialogElement>
-  breed?: Breed
-}
 
 export default function MatchResultPopup({ dialogRef, breed }: MatchResultPopupProps) {
   return (

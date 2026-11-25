@@ -1,12 +1,4 @@
-import type { ReactNode, Ref } from 'react'
-
-type PopupProps = {
-  dialogRef: Ref<HTMLDialogElement>
-  label: string
-  children: ReactNode
-  className?: string
-  closeText?: string
-}
+import type { PopupProps } from '../../../types/types'
 
 export default function Popup({ dialogRef, label, children, className, closeText = 'Close' }: PopupProps) {
   return (
