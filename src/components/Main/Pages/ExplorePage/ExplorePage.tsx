@@ -118,6 +118,7 @@ function ExplorePage() {
               description={(selectedApiBreed && describeApiBreed(selectedApiBreed, true))
                 || detailLocalBreed?.description || 'Breed details unavailable.'}
               image={detailLocalBreed?.image}
+              compactWithoutPhoto
             />
           </div>
         ) : status === 'ready' && <p role="status">Breed not found.</p>

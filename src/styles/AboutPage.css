@@ -43,7 +43,9 @@
 
 .about-page__portrait figcaption {
     margin-top: 8px;
-    font-style: italic;
+    color: inherit;
+    font-size: 1em;
+    font-weight: 700;
 }
 
 .about-page__description,

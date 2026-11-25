@@ -7,16 +7,22 @@ type BreedCardProps = {
   name: string;
   description: string;
   detailsTo?: string;
+  compactWithoutPhoto?: boolean;
   image?: {
     src: string;
     alt: string;
   };
 };
 
-function BreedCard({ name, description, image, detailsTo }: BreedCardProps) {
+function BreedCard({ name, description, image, detailsTo, compactWithoutPhoto }: BreedCardProps) {
   const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null)
   const photoDialog = useRef<HTMLDialogElement>(null)
   const photo = image?.src && image.src !== failedImageSrc ? image : undefined
+  const cardClass = [
+    'breed-card',
+    detailsTo && !photo && 'breed-card--linked',
+    compactWithoutPhoto && !photo && 'breed-card--compact',
+  ].filter(Boolean).join(' ')
   const details = (
     <>
       <h2 className="breed-card__name">{name}</h2>
@@ -25,7 +31,7 @@ function BreedCard({ name, description, image, detailsTo }: BreedCardProps) {
   )
 
   return (
-    <article className={detailsTo && !photo ? "breed-card breed-card--linked" : "breed-card"}>
+    <article className={cardClass}>
       <div className="breed-card__media">
         {photo ? (
           <button
