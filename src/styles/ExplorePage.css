@@ -12,6 +12,48 @@
   font-weight: 800;
 }
 
+.explore-page__search {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 380px);
+  margin: 18px auto 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.explore-page__search-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #aa758e;
+  border-radius: 999px;
+  background-color: #fffbf5;
+  color: inherit;
+  font: inherit;
+  font-weight: 400;
+}
+
+.explore-page__search-input::placeholder {
+  color: #76546b;
+}
+
+.explore-page__search-input::-webkit-search-cancel-button {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background:
+    linear-gradient(45deg, transparent 42%, currentColor 43% 57%, transparent 58%),
+    linear-gradient(-45deg, transparent 42%, currentColor 43% 57%, transparent 58%);
+  cursor: pointer;
+}
+
+.explore-page__search-input:focus-visible {
+  outline: 2px solid #4a123b;
+  outline-offset: 3px;
+}
+
 .explore-page__all-breeds {
   display: inline-flex;
   align-items: center;

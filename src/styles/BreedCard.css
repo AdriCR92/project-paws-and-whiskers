@@ -63,12 +63,28 @@
   text-decoration: none;
 }
 
-.breed-card__details-link:hover,
-.breed-card__details-link:focus-visible {
+.breed-card:hover,
+.breed-card:focus-within {
   background-color: #f8dedf;
+}
+
+.breed-card:hover .breed-card__media,
+.breed-card:focus-within .breed-card__media {
+  background-color: inherit;
 }
 
 .breed-card__details-link:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: -4px;
+}
+
+/* Extend the details link across cards that have no separate photo button. */
+.breed-card--linked {
+  position: relative;
+}
+
+.breed-card--linked .breed-card__details-link::after {
+  position: absolute;
+  inset: 0;
+  content: "";
 }

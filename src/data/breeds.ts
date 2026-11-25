@@ -1,4 +1,6 @@
-import maineCoonPhoto from '../images/mainCoonPhoto.jpeg'
+import maineCoonPhoto from '../images/maine-coon.jpeg'
+import siamesePhoto from '../images/siamese.jpeg'
+import britishPhoto from '../images/british-shorthair.jpeg'
 
 export type Breed = {
   id: string
@@ -22,6 +24,7 @@ export const breeds: readonly Breed[] = [
     id: 'siamese',
     name: 'Siamese',
     description: 'A short-haired cat with blue eyes and darker coloring on the face, ears, paws, and tail.',
+    image: { src: siamesePhoto, alt: 'Blue-eyed Siamese cat resting against a dusty pink background.'},
     quizProfile: [2, 2, 0, 2],
     matchSummary: 'A companion to explore if you enjoy interactive play and want a cat who likes to stay close.',
   },
@@ -29,6 +32,7 @@ export const breeds: readonly Breed[] = [
     id: 'british-shorthair',
     name: 'British Shorthair',
     description: 'A sturdy cat with a round face and a dense, plush coat.',
+    image: { src: britishPhoto, alt: 'Gray British shorthair cat siting close to a window.'},
     quizProfile: [0, 0, 1, 0],
     matchSummary: 'A companion to explore if you prefer quiet days and a cat who enjoys their own space.',
   },

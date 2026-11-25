@@ -41,7 +41,7 @@ function AboutPage() {
 
                     <section className="about-page__inspiration">
                         <h2>The Inspiration Behind Paws &amp; Whiskers</h2>
-                        <p>Max inspired me to create a place where people can explore cat breeds and learn what life with different cats might be like.</p>
+                        <p>Max inspired me to create a place where people can explore cat breeds and learn more about their origin, coats, and patterns.</p>
                         <p>Sometimes your perfect match finds you. That’s what happened with Max. He came into my life when I least expected it, filled my heart, and made my days happier.</p>
                     </section>
                 </div>

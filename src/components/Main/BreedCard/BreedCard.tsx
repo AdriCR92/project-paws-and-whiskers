@@ -25,7 +25,7 @@ function BreedCard({ name, description, image, detailsTo }: BreedCardProps) {
   )
 
   return (
-    <article className="breed-card">
+    <article className={detailsTo && !photo ? "breed-card breed-card--linked" : "breed-card"}>
       <div className="breed-card__media">
         {photo ? (
           <button
