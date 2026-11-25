@@ -1,3 +1,4 @@
+@import './vendor/normalize.css';
 @import './styles/index.css';
 @import './styles/AppLayout.css';
 @import './styles/BreedCard.css';

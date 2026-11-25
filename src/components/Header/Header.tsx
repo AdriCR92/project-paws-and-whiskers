@@ -10,14 +10,16 @@ function Header() {
                     <img src={pawLogo} alt="" width={66} height={66} />   
                     Paws & Whiskers
                 </span>
-                <ul className="header__menu">
-                    <li><NavLink to="/" end>Home</NavLink></li>
-                    <li><NavLink to="/explore">Explore Cats</NavLink></li>
-                    <li className="header__menu-item--highlighted">
-                        <NavLink to="/pawfect-match">Pawfect Match</NavLink>
-                    </li>
-                    <li><NavLink to="/about">About</NavLink></li>
-                </ul>
+                <nav aria-label="Main navigation">
+                    <ul className="header__menu">
+                        <li><NavLink to="/" end>Home</NavLink></li>
+                        <li><NavLink to="/explore">Explore Cats</NavLink></li>
+                        <li className="header__menu-item--highlighted">
+                            <NavLink to="/pawfect-match">Pawfect Match</NavLink>
+                        </li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                    </ul>
+                </nav>
             </div>
         </header>
     );
