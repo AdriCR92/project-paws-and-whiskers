@@ -12,8 +12,10 @@ function Header() {
                 </span>
                 <ul className="header__menu">
                     <li><NavLink to="/" end>Home</NavLink></li>
-                    <li>Explore Cats</li>
-                    <li className="header__menu-item--highlighted">Pawfect Match</li>
+                    <li><NavLink to="/explore">Explore Cats</NavLink></li>
+                    <li className="header__menu-item--highlighted">
+                        <NavLink to="/pawfect-match">Pawfect Match</NavLink>
+                    </li>
                     <li><NavLink to="/about">About</NavLink></li>
                 </ul>
             </div>

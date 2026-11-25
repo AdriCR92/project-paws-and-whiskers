@@ -11,9 +11,9 @@ function Main () {
             <div className="home-page__content">
                 <h1 className="home-page__tittle">Find your kind of cat</h1>
                 <p>Explore cat breeds and find one that fits your preferences.</p>
-                <a className="home-page__link" href="#explore-cats">
+                <Link className="home-page__link" to="/explore">
                     Explore cats
-                </a>
+                </Link>
             </div>
 
             <img
@@ -23,7 +23,10 @@ function Main () {
             />
         </section>
         <div className="home-shortcuts">
-            <a className="home-shortcuts__card home-shortcuts__card--match" href="#pawfect-match">
+            <Link 
+                className="home-shortcuts__card home-shortcuts__card--match" 
+                to="/pawfect-match"
+            >
                 <img
                 className="home-shortcuts__icon"
                 src={quizIcon}
@@ -31,7 +34,7 @@ function Main () {
                 />
                 <h2 className="home-shortcuts__title">Find Your Pawfect Match</h2>
                 <p>Take a short quiz to find breeds that fit your preferences.</p>
-            </a>
+            </Link>
 
             <Link className="home-shortcuts__card" to="/about">
                 <img
