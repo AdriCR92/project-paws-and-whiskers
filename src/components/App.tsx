@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import Main from "./Main/Main"
-import AboutPage from '../pages/AboutPage/AboutPage'
-import ExplorePage from '../pages/ExplorePage/ExplorePage'
-import PawfectMatchPage from '../pages/PawfectMatchPage/PawfectMatchPage'
+import Main from './Main/Main'
+import AboutPage from './Main/Pages/AboutPage/AboutPage'
+import ExplorePage from './Main/Pages/ExplorePage/ExplorePage'
+import PawfectMatchPage from './Main/Pages/PawfectMatchPage/PawfectMatchPage'
 
 function App() {
 

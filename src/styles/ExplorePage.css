@@ -1,0 +1,13 @@
+.explore-page__intro {
+  margin-bottom: clamp(20px, 4vw, 36px);
+  padding: clamp(20px, 4vw, 32px) 16px;
+  border-radius: 20px;
+  background-color: #f8dedf;
+  color: #4a123b;
+}
+
+.explore-page__title {
+  margin: 0 0 8px;
+  color: inherit;
+  font-weight: 800;
+}

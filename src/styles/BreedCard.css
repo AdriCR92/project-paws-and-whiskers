@@ -10,10 +10,28 @@
 
 .breed-card__media {
   display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
   place-items: center;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #fbf1e3;
+}
+
+.breed-card__photo-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.breed-card__photo-button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: -5px;
+  position: relative;
+  z-index: 1;
 }
 
 .breed-card__photo {
@@ -22,6 +40,7 @@
   height: 100%;
   min-height: 0;
   object-fit: cover;
+  object-position: center;
 }
 
 .breed-card__icon {

@@ -1,11 +1,11 @@
-import "../../styles/AboutPage.css"
-import developerImage from "../../images/developer-and-max.png"
-import reactIcon from "../../assets/react.svg"
-import viteIcon from "../../assets/vite.svg"
-import catApiIcon from "../../images/cat-icon.png"
-import cssIcon from "../../images/CSS-icon.png"
-import htmlIcon from "../../images/HTML-icon.png"
-import typescript from "../../images/ts-icon.png"
+import '../../../../styles/AboutPage.css'
+import developerImage from '../../../../images/developer-and-max.png'
+import reactIcon from '../../../../assets/react.svg'
+import viteIcon from '../../../../assets/vite.svg'
+import catApiIcon from '../../../../images/cat-icon.png'
+import cssIcon from '../../../../images/CSS-icon.png'
+import htmlIcon from '../../../../images/HTML-icon.png'
+import typescript from '../../../../images/ts-icon.png'
 
 const technologies = [
     { name: "CSS" , icon: cssIcon },
@@ -42,7 +42,7 @@ function AboutPage() {
                     <section className="about-page__inspiration">
                         <h2>The Inspiration Behind Paws &amp; Whiskers</h2>
                         <p>Max inspired me to create a place where people can explore cat breeds and learn what life with different cats might be like.</p>
-                        <p>Sometimes your perfect match finds you. That’s what happened with Max. He came into my life when I least expected it, filled my heart, and made my days a little happier.</p>
+                        <p>Sometimes your perfect match finds you. That’s what happened with Max. He came into my life when I least expected it, filled my heart, and made my days happier.</p>
                     </section>
                 </div>
             </div>

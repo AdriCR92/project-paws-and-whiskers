@@ -15,7 +15,7 @@
 }
 
 .header__brand{
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -53,6 +53,10 @@
 @media (max-width: 600px) {
     .header__inner {
         flex-direction: column;
+    }
+    .header__brand {
+        font-size: 1.50rem;
+        gap: 6px;
     }
     .header__menu {
         justify-content: center;

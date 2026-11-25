@@ -7,7 +7,7 @@ function Header() {
         <header className="header"> 
             <div className="header__inner">
                 <span className="header__brand">
-                    <img src={pawLogo} alt="" width={56} height={56} />   
+                    <img src={pawLogo} alt="" width={66} height={66} />   
                     Paws & Whiskers
                 </span>
                 <ul className="header__menu">
