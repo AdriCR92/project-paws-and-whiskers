@@ -1,4 +1,4 @@
-import type { ApiBreed, BreedsPage } from '../types/types'
+import type { ApiBreed, BreedsPage, CatFactsPage } from '../types/types'
 
 const BREEDS_URL = "https://catfact.ninja/breeds";
 
@@ -20,4 +20,19 @@ export async function getBreeds(): Promise<ApiBreed[]> {
   }
 
   return breeds;
+}
+
+export async function getCatFact(signal: AbortSignal): Promise<string> {
+  const response = await fetch('https://catfact.ninja/facts', { signal });
+
+  if (!response.ok) {
+    throw new Error(`Failed to load cat facts (${response.status}).`);
+  }
+
+  const page: CatFactsPage = await response.json();
+  const facts = page.data.map(({ fact }) => fact.trim()).filter(Boolean);
+  const fact = facts[Math.floor(Math.random() * facts.length)];
+
+  if (!fact) throw new Error('No cat facts available.');
+  return fact;
 }

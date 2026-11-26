@@ -4,12 +4,13 @@ import BreedCard from '../../BreedCard/BreedCard'
 import { breeds } from '../../../../data/breeds'
 import type { ApiBreed } from '../../../../types/types'
 import { getBreeds } from '../../../../utils/catFactsApi'
+import { describeBreed } from '../../../../utils/describeBreed'
+import CatFact from './CatFact'
 import '../../../../styles/ExplorePage.css'
 
-function describeApiBreed(breed: ApiBreed, includeOrigin = false) {
+function describeApiBreed(breed: ApiBreed) {
   return [
     breed.country && `Country: ${breed.country}`,
-    includeOrigin && breed.origin && `Origin: ${breed.origin}`,
     breed.coat && `Coat: ${breed.coat}`,
     breed.pattern && `Pattern: ${breed.pattern}`,
   ].filter(Boolean).join(' · ')
@@ -116,11 +117,13 @@ function ExplorePage() {
           <div className="breed-grid">
             <BreedCard
               name={selectedApiBreed?.breed ?? detailName}
-              description={(selectedApiBreed && describeApiBreed(selectedApiBreed, true))
+              description={(selectedApiBreed && describeBreed(selectedApiBreed))
                 || detailLocalBreed?.description || 'Breed details unavailable.'}
               image={detailLocalBreed?.image}
               compactWithoutPhoto
-            />
+            >
+              <CatFact key={detailName} />
+            </BreedCard>
           </div>
         ) : status === 'ready' && <p role="status">Breed not found.</p>
       ) : isSearching ? (
@@ -155,7 +158,7 @@ function ExplorePage() {
               <BreedCard
                 key={breed.id}
                 name={breed.name}
-                description={(apiBreed && describeApiBreed(apiBreed)) || breed.description}
+                description={(apiBreed && describeBreed(apiBreed)) || breed.description}
                 image={breed.image}
                 detailsTo={`/explore?breed=${breed.id}`}
               />

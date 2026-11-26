@@ -4,7 +4,7 @@ import ImagePopup from '../Popup/ImagePopup/ImagePopup';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom'
 
-function BreedCard({ name, description, image, detailsTo, compactWithoutPhoto }: BreedCardProps) {
+function BreedCard({ name, description, image, detailsTo, compactWithoutPhoto, children }: BreedCardProps) {
   const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null)
   const photoDialog = useRef<HTMLDialogElement>(null)
   const photo = image?.src && image.src !== failedImageSrc ? image : undefined
@@ -47,7 +47,10 @@ function BreedCard({ name, description, image, detailsTo, compactWithoutPhoto }:
           {details}
         </Link>
       ) : (
-        <div className="breed-card__content">{details}</div>
+        <div className="breed-card__content">
+          {details}
+          {children}
+        </div>
       )}
       {photo && (
         <ImagePopup

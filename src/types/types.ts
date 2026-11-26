@@ -5,8 +5,6 @@ export type Breed = {
   name: string
   description: string
   image?: { src: string; alt: string }
-  quizProfile: readonly [number, number, number, number]
-  matchSummary: string
 }
 
 export interface ApiBreed {
@@ -22,11 +20,16 @@ export interface BreedsPage {
   next_page_url: string | null;
 }
 
+export interface CatFactsPage {
+  data: { fact: string; length: number }[];
+}
+
 export type BreedCardProps = {
   name: string;
   description: string;
   detailsTo?: string;
   compactWithoutPhoto?: boolean;
+  children?: ReactNode;
   image?: {
     src: string;
     alt: string;
@@ -48,7 +51,16 @@ export type ImagePopupProps = {
   alt: string
 }
 
+export type QuizAnswers = Partial<Record<'coat' | 'pattern' | 'country', string>>
+
+export type MatchResult = {
+  breed: ApiBreed
+  matchedPreferences: string[]
+  preferenceCount: number
+}
+
 export type MatchResultPopupProps = {
   dialogRef: Ref<HTMLDialogElement>
-  breed?: Breed
+  result: MatchResult | null
+  onRetake: () => void
 }

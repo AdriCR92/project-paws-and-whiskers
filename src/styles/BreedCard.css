@@ -63,13 +63,13 @@
   text-decoration: none;
 }
 
-.breed-card:not(.breed-card--compact):hover,
-.breed-card:not(.breed-card--compact):focus-within {
+.breed-card:has(.breed-card__details-link):hover,
+.breed-card:has(.breed-card__details-link):focus-within {
   background-color: #f8dedf;
 }
 
-.breed-card:not(.breed-card--compact):hover .breed-card__media,
-.breed-card:not(.breed-card--compact):focus-within .breed-card__media {
+.breed-card:has(.breed-card__details-link):hover .breed-card__media,
+.breed-card:has(.breed-card__details-link):focus-within .breed-card__media {
   background-color: inherit;
 }
 
