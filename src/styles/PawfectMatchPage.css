@@ -1,0 +1,130 @@
+.match-page {
+  --match-plum: #4a123b;
+  --match-blush: #f8dedf;
+  color: var(--match-plum);
+}
+
+.match-page__intro {
+  margin-bottom: clamp(20px, 4vw, 36px);
+  padding: clamp(20px, 4vw, 32px) 16px;
+  border-radius: 20px;
+  background-color: var(--match-blush);
+}
+
+.match-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 28px);
+}
+
+.match-page__card {
+  padding: clamp(16px, 4vw, 36px);
+  border: 1px solid #e9c9ca;
+  border-radius: 20px;
+  background-color: #fffbf5;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.match-page__card progress {
+  display: block;
+  width: 100%;
+  height: 12px;
+  margin: 10px 0 24px;
+  accent-color: var(--match-plum);
+  color-scheme: light;
+}
+
+.match-page__question {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.match-page__question legend {
+  margin-bottom: 16px;
+  padding: 0;
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.match-page__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #d9b9bd;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.match-page__option + .match-page__option {
+  margin-top: 10px;
+}
+
+.match-page__option:has(input:checked) {
+  background-color: var(--match-blush);
+}
+
+.match-page__option input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--match-plum);
+  color-scheme: light;
+}
+
+.match-page__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.match-page__actions button {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.match-page__actions .match-page__next {
+  background: var(--match-plum);
+  color: #fff;
+}
+
+.match-page__actions button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.match-page__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  mask-image:
+    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to bottom, transparent, black 10%, black 82%, transparent);
+  mask-composite: intersect;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .match-page__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .match-page__photo {
+    height: auto;
+    max-height: 360px;
+  }
+}

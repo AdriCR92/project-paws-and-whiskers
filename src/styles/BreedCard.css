@@ -1,0 +1,134 @@
+.breed-card {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  border: 1px solid #dfb7b5;
+  border-radius: 20px;
+  background: #fffbf5;
+  color: #4a123b;
+  text-align: left;
+}
+
+.breed-card__media {
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #fbf1e3;
+}
+
+.breed-card__photo-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.breed-card__photo-button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: -5px;
+  position: relative;
+  z-index: 1;
+}
+
+.breed-card__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.breed-card__icon {
+  width: clamp(64px, 20%, 112px);
+  height: auto;
+}
+
+.breed-card__content {
+  padding: 16px;
+}
+
+.breed-card__name {
+  color: inherit;
+  font-weight: 800;
+}
+
+.breed-card__details-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.breed-card:has(.breed-card__details-link):hover,
+.breed-card:has(.breed-card__details-link):focus-within {
+  background-color: #f8dedf;
+}
+
+.breed-card:has(.breed-card__details-link):hover .breed-card__media,
+.breed-card:has(.breed-card__details-link):focus-within .breed-card__media {
+  background-color: inherit;
+}
+
+.breed-card__details-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
+
+/* Extend the details link across cards that have no separate photo button. */
+.breed-card--linked {
+  position: relative;
+}
+
+.breed-card--linked .breed-card__details-link::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.breed-card--compact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: min(100%, 800px);
+  box-sizing: border-box;
+  justify-self: center;
+  padding: 20px;
+}
+
+.breed-card--compact .breed-card__media {
+  flex: none;
+  width: 96px;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background-color: #fbf1e3;
+}
+
+.breed-card--compact .breed-card__icon {
+  width: 48px;
+}
+
+.breed-card--compact .breed-card__content {
+  min-width: 0;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+  .breed-card--compact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .breed-card--compact .breed-card__media {
+    align-self: center;
+    width: 64px;
+  }
+
+  .breed-card--compact .breed-card__icon {
+    width: 36px;
+  }
+}

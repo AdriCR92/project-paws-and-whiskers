@@ -1,0 +1,29 @@
+.popup {
+  box-sizing: border-box;
+  max-width: min(90vw, 900px);
+  border: 0;
+  border-radius: 20px;
+  padding: 12px;
+  background: #fffbf5;
+  color: #4a123b;
+}
+
+.popup::backdrop {
+  background: rgb(0 0 0 / 70%);
+}
+
+.popup__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.popup__controls button {
+  padding: 6px 14px;
+  border: 1px solid #dfb7b5;
+  border-radius: 999px;
+  background: #f8dedf;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
