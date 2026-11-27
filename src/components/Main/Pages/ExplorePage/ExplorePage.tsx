@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import BreedCard from '../../BreedCard/BreedCard'
 import { breeds } from '../../../../data/breeds'
+import pawIcon from '../../../../images/paw-icon.png'
 import type { ApiBreed } from '../../../../types/types'
 import { getBreeds } from '../../../../utils/catFactsApi'
 import { describeBreed } from '../../../../utils/describeBreed'
 import CatFact from './CatFact'
 import '../../../../styles/ExplorePage.css'
+
+const SEARCH_RESULTS_PER_BATCH = 6
 
 function describeApiBreed(breed: ApiBreed) {
   return [
@@ -20,6 +23,7 @@ function describeApiBreed(breed: ApiBreed) {
 function ExplorePage() {
   const [searchParams] = useSearchParams()
   const [query, setQuery] = useState('')
+  const [visibleCount, setVisibleCount] = useState(SEARCH_RESULTS_PER_BATCH)
   const [apiBreeds, setApiBreeds] = useState<ApiBreed[]>([])
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
   const [loadAttempt, setLoadAttempt] = useState(0)
@@ -65,7 +69,11 @@ function ExplorePage() {
   return (
     <>
       <header className="explore-page__intro">
-        <h1 className="explore-page__title">Explore Cats</h1>
+        <h1 className="page-title-with-paws">
+          <img src={pawIcon} alt="" />
+          <span>Explore Cats</span>
+          <img src={pawIcon} alt="" />
+        </h1>
         <p>Discover cat breeds and learn about their origins, coats, and patterns.</p>
 
         {isDetailView ? (
@@ -80,7 +88,10 @@ function ExplorePage() {
               className="explore-page__search-input"
               type="search"
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => {
+                setQuery(event.target.value)
+                setVisibleCount(SEARCH_RESULTS_PER_BATCH)
+              }}
               placeholder="e.g. Maine Coon"
             />
           </div>
@@ -124,24 +135,35 @@ function ExplorePage() {
         ) : status === 'ready' && <p role="status">Breed not found.</p>
       ) : isSearching ? (
         status === 'ready' && (
-          <div className="breed-grid">
-            {matches.map((apiBreed) => {
-              const localBreed = breeds.find(
-                ({ name }) => name.toLowerCase() === apiBreed.breed.toLowerCase(),
-              )
-              const details = describeApiBreed(apiBreed)
+          <>
+            <div className="breed-grid">
+              {matches.slice(0, visibleCount).map((apiBreed) => {
+                const localBreed = breeds.find(
+                  ({ name }) => name.toLowerCase() === apiBreed.breed.toLowerCase(),
+                )
+                const details = describeApiBreed(apiBreed)
 
-              return (
-                <BreedCard
-                  key={apiBreed.breed}
-                  name={apiBreed.breed}
-                  description={details || localBreed?.description || 'Breed details unavailable.'}
-                  image={localBreed?.image}
-                  detailsTo={`/explore?apiBreed=${encodeURIComponent(apiBreed.breed)}`}
-                />
-              )
-            })}
-          </div>
+                return (
+                  <BreedCard
+                    key={apiBreed.breed}
+                    name={apiBreed.breed}
+                    description={details || localBreed?.description || 'Breed details unavailable.'}
+                    image={localBreed?.image}
+                    detailsTo={`/explore?apiBreed=${encodeURIComponent(apiBreed.breed)}`}
+                  />
+                )
+              })}
+            </div>
+            {matches.length > visibleCount && (
+              <button
+                className="explore-page__show-more"
+                type="button"
+                onClick={() => setVisibleCount((count) => count + SEARCH_RESULTS_PER_BATCH)}
+              >
+                Show more <span aria-hidden="true">⌄</span>
+              </button>
+            )}
+          </>
         )
       ) : (
         <div className="breed-grid">

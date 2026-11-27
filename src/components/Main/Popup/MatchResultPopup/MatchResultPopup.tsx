@@ -10,11 +10,14 @@ export default function MatchResultPopup({ dialogRef, result, onRetake }: MatchR
   const description = result && describeBreed(result.breed)
   const breedName = result?.breed.breed
   const image = breeds.find(({ name }) => name.toLowerCase() === breedName?.toLowerCase())?.image
+  const layoutClassName = image
+    ? 'match-result-popup__layout'
+    : 'match-result-popup__layout match-result-popup__layout--no-photo'
 
   return (
     <Popup dialogRef={dialogRef} label="Your Pawfect Match" className="match-result-popup" closeText="×">
       {result ? (
-        <div className="match-result-popup__layout">
+        <div className={layoutClassName}>
           <div className="match-result-popup__media">
             <img
               className={image ? 'match-result-popup__photo' : 'match-result-popup__icon'}

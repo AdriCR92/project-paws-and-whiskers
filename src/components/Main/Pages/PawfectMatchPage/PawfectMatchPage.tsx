@@ -7,6 +7,7 @@ import { findBreedMatch } from '../../../../utils/findBreedMatch'
 import firstCat from '../../../../images/Q1Cat-image.jpeg'
 import secondCat from '../../../../images/Q2Cat-image.jpeg'
 import thirdCat from '../../../../images/Q3Cat-image.jpeg'
+import pawIcon from '../../../../images/paw-icon.png'
 import '../../../../styles/PawfectMatchPage.css'
 
 const questions = [
@@ -78,7 +79,11 @@ function MatchPage() {
     return (
         <section className="match-page" aria-labelledby="match-page-title">
             <header className="match-page__intro">
-                <h1 id="match-page-title" ref={headingRef} tabIndex={-1}>Pawfect Match Quiz</h1>
+                <h1 className="page-title-with-paws" id="match-page-title" ref={headingRef} tabIndex={-1}>
+                    <img src={pawIcon} alt="" />
+                    <span>Pawfect Match Quiz</span>
+                    <img src={pawIcon} alt="" />
+                </h1>
                 <p>Discover cat breeds based on your preferences.</p>
             </header>
             <div className="match-page__layout">

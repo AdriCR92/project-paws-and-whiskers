@@ -1,3 +1,20 @@
+.page-title-with-paws {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 16px);
+  margin: 0 0 8px;
+  color: inherit;
+  font-weight: 800;
+}
+
+.page-title-with-paws img {
+  flex-shrink: 0;
+  width: clamp(24px, 5vw, 40px);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;

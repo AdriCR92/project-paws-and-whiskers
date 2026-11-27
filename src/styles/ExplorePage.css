@@ -6,12 +6,6 @@
   color: #4a123b;
 }
 
-.explore-page__title {
-  margin: 0 0 8px;
-  color: inherit;
-  font-weight: 800;
-}
-
 .explore-page__search {
   display: grid;
   gap: 8px;
@@ -54,7 +48,8 @@
   outline-offset: 3px;
 }
 
-.explore-page__all-breeds {
+.explore-page__all-breeds,
+.explore-page__show-more {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -69,12 +64,22 @@
   text-decoration: none;
 }
 
-.explore-page__all-breeds:hover {
+.explore-page__show-more {
+  display: flex;
+  width: fit-content;
+  margin: 24px auto 0;
+  color: #4a123b;
+  cursor: pointer;
+}
+
+.explore-page__all-breeds:hover,
+.explore-page__show-more:hover {
   background-color: #4a123b;
   color: #fff;
 }
 
-.explore-page__all-breeds:focus-visible {
+.explore-page__all-breeds:focus-visible,
+.explore-page__show-more:focus-visible {
   outline: 2px solid #4a123b;
   outline-offset: 3px;
 }

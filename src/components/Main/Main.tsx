@@ -10,7 +10,7 @@ function Main () {
         <section className="home-page">
             <div className="home-page__content">
                 <h1 className="home-page__tittle">Find your kind of cat</h1>
-                <p>Explore cat breeds and find one that fits your preferences.</p>
+                <p>Explore cat breeds and get to know their personalities, coats, and origins.</p>
                 <Link className="home-page__link" to="/explore">
                     Explore cats
                 </Link>
