@@ -1,34 +1,28 @@
-🐾 Paws & Whiskers
+# Paws & Whiskers
 
-Paws & Whiskers is a responsive web application dedicated to exploring and discovering cats through an interactive and user-friendly experience.
+Paws & Whiskers is a responsive web app where you can explore cat breeds and take a quiz to find a breed that might fit your lifestyle. The project was inspired by my cat Max.
 
-The application uses a third-party API to retrieve and display cat information dynamically.
+## Live Demo
 
-🚀 Features
+[Open Paws & Whiskers](https://project-paws-and-whiskers.vercel.app/)
 
-The following features are planned for the application:
+## Features
 
-* Browse cat images and information.
-* Retrieve data from a third-party API.
-* Display loading indicators during API requests.
-* Handle API errors and empty results.
-* Navigate between the Home and About pages.
-* Enjoy a responsive interface across different screen sizes.
+- **Explore Cats** — Browse the breed catalog, search by name, apply filters, and load more breeds with **Show More**. Select a breed card to see more details.
+- **Pawfect Match** — Take a short quiz to get a breed recommendation based on your answers, then explore the recommended breed.
+- **About** — Meet the developer and learn how Max inspired the project.
+- **API Integration** — The app fetches breed data from a third-party API and shows loading and error messages when appropriate.
 
-🛠️ Technologies
+## Technologies
 
-* React
-* TypeScript
-* Vite
-* React Router DOM (planned)
-* HTML5
-* CSS3
-* ESLint
-* Git & GitHub
-* Third-party Cat API (integration pending)
+- React, TypeScript, and Vite
+- React Router DOM
+- HTML and CSS
+- ESLint
+- Vercel for deployment
 
-👩‍💻 Author
+## Author
 
-Adriana Capriles
+👩‍💻 Adriana Capriles 
 
-Developed as the final project for the TripleTen Web Development Bootcamp.
+Developed as the frontend final project for the TripleTen Web Development Bootcamp.
