@@ -1,3 +1,4 @@
+import ErrorPopup from '../../Popup/ErrorPopup/ErrorPopup'
 import { useRef, useState } from 'react'
 import MatchResultPopup from '../../Popup/MatchResultPopup/MatchResultPopup'
 import type { MatchResult, QuizAnswers } from '../../../../types/types'
@@ -119,13 +120,16 @@ function MatchPage() {
                                 disabled={answers[question.id] === undefined || status === 'loading'}
                                 onClick={handleSeeMatch}
                             >
-                                {status === 'loading' ? 'Finding your match…' : 'See My Match'}
+                                <span role="status">{status === 'loading' ? 'Finding your match…' : 'See My Match'}</span>
                             </button>
                         )}
                     </div>
-                    {status === 'loading' && <p role="status">Loading cat breeds…</p>}
                     {status === 'error' && (
-                        <p role="alert">We couldn’t load cat breeds. Select See My Match to try again.</p>
+                        <ErrorPopup
+                            title="We couldn’t find your match"
+                            description="Your answers are saved for this attempt."
+                            onRetry={handleSeeMatch}
+                        />
                     )}
                 </div>
                 <img className="match-page__photo" src={question.image} alt="" width={256} height={320} />

@@ -1,3 +1,4 @@
+import ErrorPopup from '../../Popup/ErrorPopup/ErrorPopup'
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import BreedCard from '../../BreedCard/BreedCard'
@@ -87,25 +88,20 @@ function ExplorePage() {
       </header>
 
       {status === 'loading' && (
-        <p role="status">Loading breeds…</p>
+        <p className="explore-page__loading" role="status">
+          <span className="explore-page__spinner" aria-hidden="true" />
+          Loading breeds…
+        </p>
       )}
 
       {status === 'error' && (
-        <div>
-          <p role="alert">
-            Something went wrong with the request. It may be a connection
-            or server issue. Please try again later.
-          </p>
-          <button
-            type="button"
-            onClick={() => {
-              setStatus('loading')
-              setLoadAttempt((attempt) => attempt + 1)
-            }}
-          >
-            Try again
-          </button>
-        </div>
+        <ErrorPopup
+          title="We couldn’t load the breed catalog"
+          onRetry={() => {
+            setStatus('loading')
+            setLoadAttempt((attempt) => attempt + 1)
+          }}
+        />
       )}
 
       {isSearching && status === 'ready' && matches.length === 0 && (
